@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:54:22 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/15 22:11:57 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/17 02:34:03 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,14 @@ t_stack	*newlist(int data)
 	return (node);
 }
 
-t_stack	*get_list(int size_list, char **data, int a)
+t_stack	*get_list(int size_list, char **data)
 {
 	t_stack	*new;
 	t_stack	*next_node;
 	t_stack	*tmp;
 	int		i;
 
-	if (a == 1)
-		i = 1;
-	if (a == 0)
-		i = 0;
+	i = 0;
 	new = newlist(ft_atoi(data[i++]));
 	tmp = new;
 	while (i < size_list)
@@ -42,7 +39,6 @@ t_stack	*get_list(int size_list, char **data, int a)
 		next_node = malloc(sizeof(t_stack));
 		if (!next_node)
 			return (NULL);
-		//next_node->prev = tmp;
 		next_node->data = ft_atoi(data[i]);
 		next_node->next = NULL;
 		tmp->next = next_node;

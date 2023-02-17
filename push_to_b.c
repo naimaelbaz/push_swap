@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 10:29:26 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/16 05:48:57 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/17 04:55:05 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ t_stack	*pb(t_stack **stack_a, t_stack *stack_b, int size)
 	tab = convert_to_array(stack_tmp, size);
 	len = get_len(*stack_a, tab, size);
 	lis_tab = get_lis(tab, size);
-	//  l = 0;
+	// l = 0;
 	// while (l < len)
 	// {
 	// 	printf("%d\t", lis_tab[l]);

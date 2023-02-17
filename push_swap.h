@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/16 07:41:30 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/17 02:21:59 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include <ctype.h>
 
 typedef struct list
@@ -42,7 +43,7 @@ void		rotate_b(t_stack **stack_b);
 void		rotate_ab(t_stack **stack_a, t_stack **stack_b);
 
 int			*get_lis(int *tab, int size);
-t_stack		*get_list(int size_list, char **data, int a);
+t_stack		*get_list(int size_list, char **data);
 t_stack		*check_numberofarg(int size, char **argv, t_stack *stack_a);
 char		**ft_split(const char *s, char c);
 int			*get_lis(int *tab, int size);
@@ -92,4 +93,5 @@ void		rrr(t_stack **stack_a, t_stack **stack_b, int com, int a);
 void		get_finallist(t_stack **stack_tmp, int size);
 void		print_stack(t_stack *stack_a);
 int			ft_min_pos1(int pos_b, int pos_a);
+void		exit_fun(void);
 #endif

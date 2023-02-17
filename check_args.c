@@ -6,26 +6,24 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:18:07 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/13 16:14:09 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/17 05:43:20 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	a_is_integer(char *argv)
+int	a_is_integer(char *str1)
 {
 	int	i;
-	int	r;
 
 	i = 0;
-	r = 1;
-	if (argv[i] == '-' || argv[i] == '+')
+	if (str1[i] == '-' || str1[i] == '+')
 		i++;
-	if (argv[i] == '\0')
+	if (str1[i] == '\0')
 		return (0);
-	while (argv[i] != '\0')
+	while (str1[i] != '\0')
 	{
-		if (!isdigit(argv[i]))
+		if (!isdigit(str1[i]))
 			return (0);
 		i++;
 	}
@@ -53,18 +51,18 @@ int	compar(const char *tmp, const char *tmp2)
 	return (0);
 }
 
-int	a_duplicate(char **argv, int argc)
+int	a_duplicate(char **str1, int size)
 {
 	int	i;
 	int	j;
 
-	i = 1;
-	while (argv[i])
+	i = 0;
+	while (str1[i])
 	{
 		j = i + 1;
-		while (j < argc)
+		while (j < size)
 		{
-			if (!compar(argv[i], argv[j]))
+			if (!compar(str1[i], str1[j]))
 				return (0);
 			j++;
 		}
@@ -73,35 +71,35 @@ int	a_duplicate(char **argv, int argc)
 	return (1);
 }
 
-int	check_arg(char **argv, int argc)
+int	check_arg(char **str1, int size)
 {
 	int	i;
 
 	i = 1;
-	while (i < argc)
+	while (i < size)
 	{
-		if (!a_is_integer(argv[i]))
+		if (!a_is_integer(str1[i]))
 			return (0);
 		i++;
 	}
-	if (!a_duplicate(argv, argc))
+	if (!a_duplicate(str1, size))
 		return (0);
 	return (1);
 }
 
-// int	main(int argc, char **argv)
+// int	main(int size, char **str1)
 // {
 // 	t_list			*stack_a;
 
-// 	if (argc > 1)
+// 	if (size > 1)
 // 	{
-// 		//printf("%d",argc);
-// 		if (!check_arg(argv, argc))
+// 		//printf("%d",size);
+// 		if (!check_arg(str1, size))
 // 		{
 // 			printf("Error\n");
 // 			exit(0);
 // 		}
-// 		stack_a = get_list(argc, argv);
+// 		stack_a = get_list(size, str1);
 // 		while (stack_a != NULL)
 // 		{
 // 			printf("%d\n", stack_a->data);
@@ -112,9 +110,9 @@ int	check_arg(char **argv, int argc)
 // }
 
 
-	// if (argc == 2)
+	// if (size == 2)
 	// {
-	// 	arg = ft_split(argv[1], ' ');
+	// 	arg = ft_split(str1[1], ' ');
 	// 	while (arg[size] != NULL)
 	// 		size++;
 	// 	ft_write_lst(stack_a, size, arg, 0);
