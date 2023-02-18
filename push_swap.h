@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 02:21:59 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 04:31:31 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,5 @@ void		get_finallist(t_stack **stack_tmp, int size);
 void		print_stack(t_stack *stack_a);
 int			ft_min_pos1(int pos_b, int pos_a);
 void		exit_fun(void);
+int			mid_value(t_stack *stack_a);
 #endif
