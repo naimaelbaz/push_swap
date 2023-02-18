@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:52:58 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 01:57:18 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 03:13:19 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int	main(int argc, char **argv)
 		stack_b = pb(&stack_a, stack_b, ft_lstsiz(stack_a));
 		get_index_args(stack_a, ft_lstsiz(stack_a));
 		get_index_args(stack_b, ft_lstsiz(stack_b));
+		// printf(">>>>>>>>>>A<<<<<<<<<<\n");
+		// print_stack(stack_a);
+		// printf(">>>>>>>>>>B<<<<<<<<<<\n");
+		// print_stack(stack_b);
 		push_to_a(&stack_a, &stack_b);
 	}
 	exit (0);

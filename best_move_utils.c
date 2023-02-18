@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:23:31 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 01:24:07 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 03:13:08 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,49 +19,6 @@ int	to_pos(int tab)
 	return (tab);
 }
 
-int	ft_min_pos(t_stack	*stack_b, int *tab)
-{
-	t_stack	*tmp;
-	int		min_pos;
-	int		i;
-
-	tmp = stack_b;
-	i = 0;
-	min_pos = to_pos(tab[i++]) + to_pos(tmp->position);
-	tmp = tmp->next;
-	while (tmp != NULL)
-	{
-		if (min_pos > (to_pos(tab[i]) + to_pos(tmp->position)))
-			min_pos = to_pos(tab[i]) + to_pos(tmp->position);
-		tmp = tmp->next;
-		i++;
-	}
-	return (min_pos);
-}
-
-// int	ft_min_pos1(int pos_b, int pos_a)
-// {
-// 	int		min_pos;
-
-// 	if (pos_a > 0 && pos_b > 0)
-// 	{
-// 		if (pos_a > pos_b)
-// 			min_pos = pos_a;
-// 		else
-// 			min_pos = pos_b;
-// 	}
-// 	else if (pos_a < 0 && pos_b < 0)
-// 	{
-// 		if (pos_a < pos_b)
-// 			min_pos = pos_a;
-// 		else
-// 			min_pos = pos_b;
-// 	}
-// 	else
-// 		min_pos = to_pos(pos_a) + to_pos(pos_b);
-// 	return (to_pos(min_pos));
-// }
-
 // int	ft_min_pos(t_stack	*stack_b, int *tab)
 // {
 // 	t_stack	*tmp;
@@ -70,17 +27,66 @@ int	ft_min_pos(t_stack	*stack_b, int *tab)
 
 // 	tmp = stack_b;
 // 	i = 0;
-// 	min_pos = ft_min_pos1(tmp->position, tab[i]);
+// 	min_pos = to_pos(tab[i++]) + to_pos(tmp->position);
+// 	printf("pos = %d\n", min_pos);
 // 	tmp = tmp->next;
 // 	while (tmp != NULL)
 // 	{
-// 		if (min_pos > ft_min_pos1(tmp->position, tab[i]))
-// 			min_pos = ft_min_pos1(tmp->position, tab[i]);
+		
+// 		printf("pos = %d\n", to_pos(tab[i]) + to_pos(tmp->position));
+// 		if (min_pos > (to_pos(tab[i]) + to_pos(tmp->position)))
+// 			min_pos = to_pos(tab[i]) + to_pos(tmp->position);
 // 		tmp = tmp->next;
 // 		i++;
 // 	}
 // 	return (min_pos);
 // }
+
+int	ft_min_pos1(int pos_b, int pos_a)
+{
+	int		min_pos;
+
+	min_pos = 0;
+	if (pos_a * pos_b <= 0)
+		min_pos = to_pos(pos_a) + to_pos(pos_b);
+	else if (pos_a >= 0 && pos_b >= 0)
+	{
+		if (pos_a > pos_b)
+			min_pos = pos_a;
+		else
+			min_pos = pos_b;
+	}
+	else if (pos_a < 0 && pos_b < 0)
+	{
+		if (pos_a < pos_b)
+			min_pos = pos_a;
+		else
+			min_pos = pos_b;
+	}
+	return (to_pos(min_pos));
+}
+
+int	ft_min_pos(t_stack	*stack_b, int *tab)
+{
+	t_stack	*tmp;
+	int		min_pos;
+	int		i;
+
+	tmp = stack_b;
+	i = 0;
+	min_pos = ft_min_pos1(tmp->position, tab[i++]);
+	// printf("pos = %d\n", min_pos);
+	tmp = tmp->next;
+	while (tmp != NULL)
+	{
+		// printf("pos = %d\n", ft_min_pos1(tmp->position, tab[i]));
+		if (min_pos > ft_min_pos1(tmp->position, tab[i]))
+			min_pos = ft_min_pos1(tmp->position, tab[i]);
+		tmp = tmp->next;
+		i++;
+	}
+	return (min_pos);
+}
 
 int	min_number(int i, int j)
 {

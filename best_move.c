@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 09:01:01 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 18:23:07 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 03:15:03 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ int	best_move(t_stack *stack_a, t_stack *stack_b)
 
 	tab = number_of_moves(stack_a, stack_b);
 	min_pos = ft_min_pos(stack_b, tab);
-	//printf("min_pos:------>%d\n", min_pos);
+	// printf("min_pos:------>%d\n", min_pos);
+	// getchar();
 	tmp = stack_b;
 	i = 0;
 	while (tmp != NULL)
 	{
 		//ft_min_pos1(tmp->position, tab[i]) 
-		if ((to_pos(tmp->position) + to_pos(tab[i])) == min_pos)
+		//to_pos(tmp->position) + to_pos(tab[i])
+		if ((ft_min_pos1(tmp->position, tab[i])) == min_pos)
 			return (tmp->data);
 		tmp = tmp->next;
 		i++;
@@ -41,7 +43,7 @@ void	print_stack(t_stack *stack_a)
 	printf("*********************************\n");
 	while (stack_a != NULL)
 	{
-		printf("data = %d\n", stack_a->data);
+		printf("data = %d | position = %d\n", stack_a->data, stack_a->position);
 		stack_a = stack_a->next;
 	}
 	printf("*********************************\n");
@@ -108,7 +110,7 @@ void	push_best_move(t_stack **stack_a, t_stack **stack_b)
 	data = best_move(*stack_a, *stack_b);
 	// printf("\nbest_move---->%d  ", data);
 	// printf("\n");
-	// getchar();
+	//getchar();
 	i = 0;
 	tmp = *stack_b;
 	len = ft_lstsiz(*stack_b);
