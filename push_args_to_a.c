@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:29:44 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 05:52:22 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/17 17:37:11 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ t_stack	*check_getlist(int size, char **tmp, t_stack *stack_a)
 	return (stack_a);
 }
 
-char	*ft_strcat(char *dst, const char *src)
+char	*ft_strcat(char *dst, char *src)
 {
 	size_t	i;
 	size_t	j;
 
 	j = 0;
 	i = ft_strlen(dst);
-	if (dst[i] == '\0')
+	if (dst[0] == '\0' || src[0] == '\0')
 		exit_fun();
 	dst[i++] = ' ';
 	while (src[j] != '\0')

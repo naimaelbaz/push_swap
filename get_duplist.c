@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 09:18:37 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/15 22:13:20 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 01:50:24 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ t_stack	*get_duplist(t_stack *stack_a, int size)
 
 	stack_tmp = copy_list(stack_a);
 	stack_tmp = get_newlist(stack_tmp, size);
-	//  print_stack(stack_tmp);
+	//print_stack(stack_tmp);
 	return (stack_tmp);
 }

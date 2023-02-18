@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:52:58 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 04:45:53 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 01:57:18 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,16 @@ int	main(int argc, char **argv)
 {
 	t_stack			*stack_a;
 	t_stack			*stack_b;
-	// int				*tab;
-	//int				i;
-	//int				j;
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc > 1)
 	{
 		stack_a = check_numberofarg(argc, argv, stack_a);
-		// if (ft_lstsiz(stack_a) == 1)
-		// 	exit(0);
-		stack_b = pb(&stack_a, stack_b, argc);
+		stack_b = pb(&stack_a, stack_b, ft_lstsiz(stack_a));
 		get_index_args(stack_a, ft_lstsiz(stack_a));
 		get_index_args(stack_b, ft_lstsiz(stack_b));
-		// printf("--------------A-----------\n");
-		// print_stack(stack_a);
-		// printf("--------------B-----------\n");
-		// print_stack(stack_b);
-		// push_to_a(&stack_a, &stack_b);
-		// printf(">>>>>>>>A<<<<<<<<\n");
-		// print_stack(stack_a);
+		push_to_a(&stack_a, &stack_b);
 	}
 	exit (0);
 }

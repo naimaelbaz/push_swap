@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 10:29:26 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 04:55:05 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 02:00:35 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ t_stack	*pb(t_stack **stack_a, t_stack *stack_b, int size)
 	// 	l++;
 	// }
 	// printf("\n");
+	// getchar();
 	l = ft_lstsiz(*stack_a) - len;
 	while (ft_lstsiz(stack_b) < l)
 	{
