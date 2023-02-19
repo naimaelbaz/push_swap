@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:29:44 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 17:37:11 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/19 01:26:24 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ t_stack	*check_numberofarg(int size, char **argv, t_stack *stack_a)
 		str1 = ft_split(str, ' ');
 		while (str1[i++] != NULL)
 			size2++;
-		stack_a = check_getlist(size2, str1, stack_a);
+		if (size2 > 1)
+			stack_a = check_getlist(size2, str1, stack_a);
+		else
+			exit(0);
 	}
 	return (stack_a);
 }

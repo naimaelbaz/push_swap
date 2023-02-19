@@ -6,13 +6,12 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 09:18:37 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 01:50:24 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 22:55:54 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*get_lis => git LIS array */
 int	*get_lis(int *tab, int size)
 {
 	int	*lis_tab;
@@ -35,14 +34,11 @@ int	*get_lis(int *tab, int size)
 	return (lis_tab);
 }
 
-/*get_duplist => get a duplicate stack tmp that
- have the min value, in the origin stack, in the top */
 t_stack	*get_duplist(t_stack *stack_a, int size)
 {
 	t_stack	*stack_tmp;
 
 	stack_tmp = copy_list(stack_a);
 	stack_tmp = get_newlist(stack_tmp, size);
-	//print_stack(stack_tmp);
 	return (stack_tmp);
 }

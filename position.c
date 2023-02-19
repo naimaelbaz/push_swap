@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:07:09 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 03:14:21 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 22:58:14 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,7 @@ int	*number_of_moves(t_stack *stack_a, t_stack *stack_b)
 	{
 		tab[i] = position_of_a(stack_a, tmp->data);
 		tmp = tmp->next;
-		// printf("%d  ", tab[i]);
 		i++;
 	}
-	// i = 0;
-	// tmp = stack_b;
-	// 	printf("*********************************\n");
-	// 	while (tmp != NULL)
-	// 	{
-	// 		printf("position_A = %d  | position_B = %d\n", tab[i++], tmp->position);
-	// 		tmp = tmp->next;
-	// 	}
-	// 	printf("*********************************\n");
-	// printf("\n");
 	return (tab);
 }

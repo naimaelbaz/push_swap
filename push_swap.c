@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:52:58 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 04:32:28 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/19 02:31:50 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ int	*convert_to_array(t_stack *stack_tmp, int size)
 	return (tab);
 }
 
+void print_stack(t_stack *stack_a)
+{
+	while(stack_a != NULL)
+	{
+		printf("%d\n", stack_a->data);
+		stack_a = stack_a->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack			*stack_a;
@@ -40,14 +49,16 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		stack_a = check_numberofarg(argc, argv, stack_a);
-		stack_b = pb(&stack_a, stack_b, ft_lstsiz(stack_a));
-		get_index_args(stack_a, ft_lstsiz(stack_a));
-		get_index_args(stack_b, ft_lstsiz(stack_b));
-		// printf(">>>>>>>>>>A<<<<<<<<<<\n");
-		// print_stack(stack_a);
-		// printf(">>>>>>>>>>B<<<<<<<<<<\n");
-		// print_stack(stack_b);
-		push_to_a(&stack_a, &stack_b);
+		// if (ft_lstsiz(stack_a) < 6)
+		// 	sort_small_num(stack_a, stack_b, ft_lstsiz(stack_a));
+		// else
+		// {
+			pb(&stack_a, &stack_b, ft_lstsiz(stack_a));
+			get_index_args(stack_a, ft_lstsiz(stack_a));
+			get_index_args(stack_b, ft_lstsiz(stack_b));
+			push_to_a(&stack_a, &stack_b);
+			//print_stack(stack_a);
+		// }
 	}
 	exit (0);
 }

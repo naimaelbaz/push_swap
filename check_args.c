@@ -6,11 +6,18 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:18:07 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 17:38:16 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 22:54:54 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	to_pos(int tab)
+{
+	if (tab < 0)
+		tab *= -1;
+	return (tab);
+}
 
 int	a_is_integer(char *str1)
 {
@@ -86,35 +93,3 @@ int	check_arg(char **str1, int size)
 		return (0);
 	return (1);
 }
-
-// int	main(int size, char **str1)
-// {
-// 	t_list			*stack_a;
-
-// 	if (size > 1)
-// 	{
-// 		//printf("%d",size);
-// 		if (!check_arg(str1, size))
-// 		{
-// 			printf("Error\n");
-// 			exit(0);
-// 		}
-// 		stack_a = get_list(size, str1);
-// 		while (stack_a != NULL)
-// 		{
-// 			printf("%d\n", stack_a->data);
-// 			stack_a = stack_a->next;
-// 		}
-// 	}
-// 	return (0);
-// }
-
-
-	// if (size == 2)
-	// {
-	// 	arg = ft_split(str1[1], ' ');
-	// 	while (arg[size] != NULL)
-	// 		size++;
-	// 	ft_write_lst(stack_a, size, arg, 0);
-	// 	free(arg);
-	// }

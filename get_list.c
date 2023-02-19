@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:54:22 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/17 02:34:03 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 22:56:51 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,3 @@ t_stack	*get_list(int size_list, char **data)
 	}
 	return (new);
 }
-
-
-// int	main(int argc, char **argv)
-// {
-// 	t_Doublylist	*test;
-
-// 	test = get_list(argc, argv);
-// 	while (test != NULL)
-// 	{
-// 		printf("%d\n", test->data);
-// 		test = test->next;
-// 	}
-// }

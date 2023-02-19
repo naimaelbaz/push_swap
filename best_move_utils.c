@@ -6,41 +6,11 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:23:31 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 03:13:08 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 22:55:34 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	to_pos(int tab)
-{
-	if (tab < 0)
-		tab *= -1;
-	return (tab);
-}
-
-// int	ft_min_pos(t_stack	*stack_b, int *tab)
-// {
-// 	t_stack	*tmp;
-// 	int		min_pos;
-// 	int		i;
-
-// 	tmp = stack_b;
-// 	i = 0;
-// 	min_pos = to_pos(tab[i++]) + to_pos(tmp->position);
-// 	printf("pos = %d\n", min_pos);
-// 	tmp = tmp->next;
-// 	while (tmp != NULL)
-// 	{
-		
-// 		printf("pos = %d\n", to_pos(tab[i]) + to_pos(tmp->position));
-// 		if (min_pos > (to_pos(tab[i]) + to_pos(tmp->position)))
-// 			min_pos = to_pos(tab[i]) + to_pos(tmp->position);
-// 		tmp = tmp->next;
-// 		i++;
-// 	}
-// 	return (min_pos);
-// }
 
 int	ft_min_pos1(int pos_b, int pos_a)
 {
@@ -75,11 +45,9 @@ int	ft_min_pos(t_stack	*stack_b, int *tab)
 	tmp = stack_b;
 	i = 0;
 	min_pos = ft_min_pos1(tmp->position, tab[i++]);
-	// printf("pos = %d\n", min_pos);
 	tmp = tmp->next;
 	while (tmp != NULL)
 	{
-		// printf("pos = %d\n", ft_min_pos1(tmp->position, tab[i]));
 		if (min_pos > ft_min_pos1(tmp->position, tab[i]))
 			min_pos = ft_min_pos1(tmp->position, tab[i]);
 		tmp = tmp->next;

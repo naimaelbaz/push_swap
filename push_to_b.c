@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 10:29:26 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 05:12:14 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 22:59:16 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ int	get_len(t_stack *stack_a, int *tab, int size)
 	return (len);
 }
 
-/*pb => push in stack_b the non LIS numbers*/
-t_stack	*pb(t_stack **stack_a, t_stack *stack_b, int size)
+void	pb(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int			*tab;
 	int			*lis_tab;
@@ -95,17 +94,16 @@ t_stack	*pb(t_stack **stack_a, t_stack *stack_b, int size)
 	len = get_len(*stack_a, tab, size);
 	lis_tab = get_lis(tab, size);
 	l = ft_lstsiz(*stack_a) - len;
-	while (ft_lstsiz(stack_b) < l)
+	len = mid_value(*stack_a);
+	while (ft_lstsiz(*stack_b) < l)
 	{
 		if ((strchr_int(lis_tab, len, (*stack_a)->data)) == 0)
-			push_b(&stack_b, stack_a);
-		else
 		{
-			if (check_size(*stack_a, lis_tab, tab, size))
-				rev_rotate_a(stack_a);
-			else
-				rotate_a(stack_a);
+			push_b(stack_b, stack_a);
+			if ((*stack_a)->data < len)
+				rotate_b(stack_b);
 		}
+		else
+			rotate_a(stack_a);
 	}
-	return (stack_b);
 }

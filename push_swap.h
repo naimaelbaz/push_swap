@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 04:31:31 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/19 02:26:21 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void		rev_rotate_ab(t_stack **stack_a, t_stack **stack_b);
 void		rotate_a(t_stack **stack_a);
 void		rotate_b(t_stack **stack_b);
 void		rotate_ab(t_stack **stack_a, t_stack **stack_b);
+void		swap_a(t_stack *stack_a);
+void		swap_b(t_stack *stack_b);
 
 int			*get_lis(int *tab, int size);
 t_stack		*get_list(int size_list, char **data);
@@ -72,7 +74,7 @@ int			*get_index_tab(int *tab, int size);
 int			get_index(int *len_tab, int size);
 int			max_len(int *len_tab, int size);
 
-t_stack		*pb(t_stack **stack_a, t_stack *stack_b, int size);
+void		pb(t_stack **stack_a, t_stack **stack_b, int size);
 void		rotate_a_tmp(t_stack **stack_a);
 void		rev_rotate_a_tmp(t_stack **stack);
 int			check_size(t_stack *stack_a, int *tab_lis, int *tab, int size);
@@ -91,8 +93,11 @@ int			ft_min_pos(t_stack	*stack_b, int *tab);
 int			min_number(int i, int j);
 void		rrr(t_stack **stack_a, t_stack **stack_b, int com, int a);
 void		get_finallist(t_stack **stack_tmp, int size);
-void		print_stack(t_stack *stack_a);
 int			ft_min_pos1(int pos_b, int pos_a);
 void		exit_fun(void);
 int			mid_value(t_stack *stack_a);
+
+
+
+void	 print_stack(t_stack *stack_a);
 #endif

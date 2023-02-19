@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:19:06 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/14 11:02:53 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 22:59:43 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	rotate(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*str;
 
+	if ((*stack)->next == NULL)
+		return ;
 	tmp = (*stack)->next;
 	str = *stack;
 	while (str && str->next != NULL)
@@ -51,25 +53,3 @@ void	rotate_ab(t_stack **stack_a, t_stack **stack_b)
 	rotate(stack_b);
 	ft_putstr_fd("rr\n", 1);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	t_stack			*stack_a;
-
-// 	if (argc > 1)
-// 	{
-// 		stack_a = get_list(argc, argv, 1);
-// 		// while (stack_a != NULL)
-// 		// {
-// 		// 	printf("%d\n",stack_a->data);
-// 		// 	stack_a = stack_a->next;
-// 		// }
-// 		// rotate(&stack_a);
-// 		// rotate(&stack_a);
-// 		// while (stack_a != NULL)
-// 		// {
-// 		// 	printf("%d\n",stack_a->data);
-// 		// 	stack_a = stack_a->next;
-// 		// }
-// 	}
-// }

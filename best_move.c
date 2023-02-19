@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 09:01:01 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 03:15:03 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 23:00:46 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,10 @@ int	best_move(t_stack *stack_a, t_stack *stack_b)
 
 	tab = number_of_moves(stack_a, stack_b);
 	min_pos = ft_min_pos(stack_b, tab);
-	// printf("min_pos:------>%d\n", min_pos);
-	// getchar();
 	tmp = stack_b;
 	i = 0;
 	while (tmp != NULL)
 	{
-		//ft_min_pos1(tmp->position, tab[i]) 
-		//to_pos(tmp->position) + to_pos(tab[i])
 		if ((ft_min_pos1(tmp->position, tab[i])) == min_pos)
 			return (tmp->data);
 		tmp = tmp->next;
@@ -36,17 +32,6 @@ int	best_move(t_stack *stack_a, t_stack *stack_b)
 	}
 	free (tab);
 	return (0);
-}
-
-void	print_stack(t_stack *stack_a)
-{
-	printf("*********************************\n");
-	while (stack_a != NULL)
-	{
-		printf("data = %d | position = %d\n", stack_a->data, stack_a->position);
-		stack_a = stack_a->next;
-	}
-	printf("*********************************\n");
 }
 
 void	deff_signe(t_stack **stack_a, t_stack **stack_b, int pos_a, int pos_b)
@@ -73,7 +58,6 @@ void	deff_signe(t_stack **stack_a, t_stack **stack_b, int pos_a, int pos_b)
 		j--;
 	}
 	push_a(stack_a, stack_b);
-	//print_stack(*stack_a);
 }
 
 void	same_signe(t_stack **stack_a, t_stack **stack_b, int pos_a, int pos_b)
@@ -95,7 +79,6 @@ void	same_signe(t_stack **stack_a, t_stack **stack_b, int pos_a, int pos_b)
 		deff_signe(stack_a, stack_b, pos_a - pos_b, 0);
 	else
 		push_a(stack_a, stack_b);
-	//print_stack(*stack_a);
 }
 
 void	push_best_move(t_stack **stack_a, t_stack **stack_b)
@@ -108,9 +91,6 @@ void	push_best_move(t_stack **stack_a, t_stack **stack_b)
 
 	tab = number_of_moves(*stack_a, *stack_b);
 	data = best_move(*stack_a, *stack_b);
-	// printf("\nbest_move---->%d  ", data);
-	// printf("\n");
-	//getchar();
 	i = 0;
 	tmp = *stack_b;
 	len = ft_lstsiz(*stack_b);
@@ -140,10 +120,6 @@ void	push_to_a(t_stack **stack_a, t_stack **stack_b)
 		push_best_move(stack_a, stack_b);
 		get_index_args(*stack_a, ft_lstsiz(*stack_a));
 		get_index_args(*stack_b, ft_lstsiz(*stack_b));
-		// printf("--------------A-----------\n");
-		// print_stack(*stack_a);
-		// printf("--------------B-----------\n");
-		// print_stack(*stack_b);
 		i--;
 	}
 	get_finallist(stack_a, ft_lstsiz(*stack_a));

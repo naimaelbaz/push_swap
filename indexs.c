@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 09:44:10 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/14 10:51:44 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/18 23:02:58 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,3 @@ void	get_index_args(t_stack *stack, int size_stack)
 	else
 		impair_size(stack, size_stack);
 }
-
