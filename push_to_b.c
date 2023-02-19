@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 10:29:26 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 22:59:16 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/19 03:54:23 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,12 @@ void	pb(t_stack **stack_a, t_stack **stack_b, int size)
 	len = get_len(*stack_a, tab, size);
 	lis_tab = get_lis(tab, size);
 	l = ft_lstsiz(*stack_a) - len;
-	len = mid_value(*stack_a);
 	while (ft_lstsiz(*stack_b) < l)
 	{
 		if ((strchr_int(lis_tab, len, (*stack_a)->data)) == 0)
 		{
 			push_b(stack_b, stack_a);
-			if ((*stack_a)->data < len)
+			if ((*stack_a)->data < mid_value(*stack_a))
 				rotate_b(stack_b);
 		}
 		else
