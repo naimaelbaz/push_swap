@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:29:44 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/19 01:26:24 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 02:35:36 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,17 @@ t_stack	*check_numberofarg(int size, char **argv, t_stack *stack_a)
 		while (i < size - 1)
 		{
 			str = ft_strcat(str, argv[i + 1]);
+
 			i++;
 		}
 		i = 0;
 		str1 = ft_split(str, ' ');
-		while (str1[i++] != NULL)
+		while (str1[i] != NULL)
+		{
+			printf("[[[%s]]\n", str1[i]);
 			size2++;
+			i++;
+		}
 		if (size2 > 1)
 			stack_a = check_getlist(size2, str1, stack_a);
 		else

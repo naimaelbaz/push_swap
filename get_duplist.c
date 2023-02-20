@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 09:18:37 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 22:55:54 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 02:53:29 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	*get_lis(int *tab, int size)
 	len_tab = get_length(tab, size);
 	len = max_len(len_tab, size) - 1;
 	j = get_index(len_tab, size);
-	lis_tab = malloc(sizeof(int) * len);
+	lis_tab = malloc(sizeof(int) * len); /*/*/
+	
 	while (j >= 0)
 	{
 		lis_tab[len] = tab[j];

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/19 02:26:21 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/19 22:19:52 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,6 @@ int			mid_value(t_stack *stack_a);
 
 
 void	 print_stack(t_stack *stack_a);
+int		get_len(t_stack *stack_a, int *tab, int size);
+int		have_the_mid(t_stack *stack_a);
 #endif

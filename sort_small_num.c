@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 01:30:47 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/19 02:20:55 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/19 04:32:31 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,7 @@ void	ft_sort2(t_stack **stack_a, int size)
 		swap_a(stack_a);
 }
 
-void	ft_sort3(t_stack *stack_a, t_stack *stack_b,)
+void	ft_sort3(t_stack *stack_a, t_stack *stack_b, int size)
+{
+	
+}

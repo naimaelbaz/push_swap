@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:11:05 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 22:56:26 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 02:59:34 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	*get_length(int *tab, int size)
 	{
 		while (j != i)
 		{
-			if (tab[j] < tab[i] && len_tab[j] + 1 > len_tab[i])
+			if (tab[j] < tab[i] && len_tab[j] >= len_tab[i])
 				len_tab[i] = len_tab[j] + 1;
 			j++;
 		}
@@ -58,8 +58,8 @@ int	*get_index_tab(int *tab, int size)
 	int	*index_tab;
 	int	*len_tab;
 
-	len_tab = malloc(size * sizeof(int));
-	index_tab = malloc(size * sizeof(int));
+	len_tab = malloc(size * sizeof(int)); //*
+	index_tab = malloc(size * sizeof(int)); //*
 	insert_tab(index_tab, len_tab, size);
 	i = 1;
 	j = 0;
