@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:18:07 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 22:54:54 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 14:17:02 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	check_arg(char **str1, int size)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (i < size)
 	{
 		if (!a_is_integer(str1[i]))

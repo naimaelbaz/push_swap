@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:23:31 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/19 18:23:53 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 16:30:54 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	get_finallist(t_stack **stack_tmp, int size)
 	{
 		if (pos <= (size / 2))
 			rotate_a(stack_tmp);
-		else if (pos > (size / 2))
+		else
 			rev_rotate_a(stack_tmp);
 	}
 }

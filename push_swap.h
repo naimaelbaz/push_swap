@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/19 22:19:52 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 16:15:15 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,9 @@ void		get_finallist(t_stack **stack_tmp, int size);
 int			ft_min_pos1(int pos_b, int pos_a);
 void		exit_fun(void);
 int			mid_value(t_stack *stack_a);
+void		sort_small_num(t_stack *stack_a, t_stack *stack_b, int size);
+t_stack		*lst_last(t_stack *lst);
+void		push_best_move(t_stack **stack_a, t_stack **stack_b);
 
 
 

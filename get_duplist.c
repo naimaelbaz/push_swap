@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 09:18:37 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/20 02:53:29 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 15:35:54 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,23 @@ int	*get_lis(int *tab, int size)
 		len--;
 	}
 	return (lis_tab);
+}
+
+t_stack	*get_newlist(t_stack *stack_tmp, int size)
+{
+	int			pos;
+	int			min;
+
+	pos = get_position(stack_tmp);
+	min = have_min_number(stack_tmp);
+	while (stack_tmp->data != min)
+	{
+		if (pos <= (size / 2))
+			rotate_a_tmp(&stack_tmp);
+		else if (pos > (size / 2))
+			rev_rotate_a_tmp(&stack_tmp);
+	}
+	return (stack_tmp);
 }
 
 t_stack	*get_duplist(t_stack *stack_a, int size)

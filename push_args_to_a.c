@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:29:44 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/20 02:35:36 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 14:18:40 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ void	exit_fun(void)
 
 t_stack	*check_getlist(int size, char **tmp, t_stack *stack_a)
 {
-	if (!check_arg(tmp, size))
+	if ((!check_arg(tmp, size)))
 		exit_fun();
-	stack_a = get_list(size, tmp);
+	else if (size > 1)
+		stack_a = get_list(size, tmp);
+	else
+		exit(0);
 	return (stack_a);
 }
 
@@ -66,16 +69,9 @@ t_stack	*check_numberofarg(int size, char **argv, t_stack *stack_a)
 		}
 		i = 0;
 		str1 = ft_split(str, ' ');
-		while (str1[i] != NULL)
-		{
-			printf("[[[%s]]\n", str1[i]);
+		while (str1[i++] != NULL)
 			size2++;
-			i++;
-		}
-		if (size2 > 1)
-			stack_a = check_getlist(size2, str1, stack_a);
-		else
-			exit(0);
+		stack_a = check_getlist(size2, str1, stack_a);
 	}
 	return (stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:16:03 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 23:00:54 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/20 15:35:59 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,23 +60,6 @@ void	lstadd_back(t_stack **lst, t_stack *new)
 	while (ptr->next != NULL)
 		ptr = ptr->next;
 	ptr->next = new;
-}
-
-t_stack	*get_newlist(t_stack *stack_tmp, int size)
-{
-	int			pos;
-	int			min;
-
-	pos = get_position(stack_tmp);
-	min = have_min_number(stack_tmp);
-	while (stack_tmp->data != min)
-	{
-		if (pos <= (size / 2))
-			rotate_a_tmp(&stack_tmp);
-		else if (pos > (size / 2))
-			rev_rotate_a_tmp(&stack_tmp);
-	}
-	return (stack_tmp);
 }
 
 t_stack	*copy_list(t_stack *stack_a)
