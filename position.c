@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:07:09 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 22:58:14 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/21 04:28:35 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	*number_of_moves(t_stack *stack_a, t_stack *stack_b)
 	tmp = stack_b;
 	i = 0;
 	tab = malloc(sizeof(int) * ft_lstsiz(stack_b));
+	if (!tab)
+		return (NULL);
 	while (tmp != NULL)
 	{
 		tab[i] = position_of_a(stack_a, tmp->data);

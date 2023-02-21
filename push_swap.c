@@ -6,11 +6,23 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:52:58 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/20 16:39:54 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/21 05:32:48 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+int	a_is_sorted(t_stack	*stack_a)
+{
+	while (stack_a->next != NULL)
+	{
+		if (stack_a->data > stack_a->next->data)
+			return (0);
+		stack_a = stack_a->next;
+	}
+	return (1);
+}
 
 int	*convert_to_array(t_stack *stack_tmp, int size)
 {
@@ -21,6 +33,8 @@ int	*convert_to_array(t_stack *stack_tmp, int size)
 	i = 0;
 	node = stack_tmp;
 	tab = malloc(sizeof(int) * size);
+	if (!tab)
+		return (NULL);
 	while (node != NULL && i < size)
 	{
 		tab[i] = node->data;
@@ -30,23 +44,25 @@ int	*convert_to_array(t_stack *stack_tmp, int size)
 	return (tab);
 }
 
-void print_stack(t_stack *stack_a)
+void	free_stack(t_stack **stack)
 {
-	while(stack_a != NULL)
+	t_stack	*tmp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
 	{
-		printf("%d\n", stack_a->data);
-		stack_a = stack_a->next;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
+	*stack = NULL;
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack			*stack_a;
 	t_stack			*stack_b;
-	// int				*tab;
-	// int				*lis_tab;
-	// int				len;
-	// int				l;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -60,6 +76,7 @@ int	main(int argc, char **argv)
 			pb(&stack_a, &stack_b, ft_lstsiz(stack_a));
 			get_index_args(stack_a, ft_lstsiz(stack_a));
 			get_index_args(stack_b, ft_lstsiz(stack_b));
+			sleep(30);
 			push_to_a(&stack_a, &stack_b);
 		}
 	}

@@ -6,22 +6,11 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 01:30:47 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/20 16:40:08 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/21 04:33:00 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	a_is_sorted(t_stack	*stack_a)
-{
-	while (stack_a->next != NULL)
-	{
-		if (stack_a->data > stack_a->next->data)
-			return (0);
-		stack_a = stack_a->next;
-	}
-	return (1);
-}
 
 void	ft_sort2(t_stack **stack_a)
 {

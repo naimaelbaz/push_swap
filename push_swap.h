@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/20 16:15:15 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/21 04:35:12 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,5 @@ int			mid_value(t_stack *stack_a);
 void		sort_small_num(t_stack *stack_a, t_stack *stack_b, int size);
 t_stack		*lst_last(t_stack *lst);
 void		push_best_move(t_stack **stack_a, t_stack **stack_b);
-
-
-
-void	 print_stack(t_stack *stack_a);
-int		get_len(t_stack *stack_a, int *tab, int size);
-int		have_the_mid(t_stack *stack_a);
+int			a_is_sorted(t_stack	*stack_a);
 #endif

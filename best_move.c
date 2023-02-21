@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 09:01:01 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/20 16:09:58 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/21 05:31:52 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,11 +103,11 @@ void	push_best_move(t_stack **stack_a, t_stack **stack_b)
 			else if (tab[i] * tmp->position <= 0)
 				deff_signe(stack_a, stack_b, tab[i], tmp->position);
 			return ;
-			print_stack(*stack_a);
 		}
 		tmp = tmp->next;
 		i++;
 	}
+	free(tab);
 }
 
 void	push_to_a(t_stack **stack_a, t_stack **stack_b)

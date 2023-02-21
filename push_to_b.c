@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 10:29:26 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/20 14:23:15 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/21 03:39:26 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,23 +88,22 @@ void	pb(t_stack **stack_a, t_stack **stack_b, int size)
 	t_stack		*stack_tmp;
 	int			l;
 	int			len;
-	int			mid;
-	
+
 	stack_tmp = get_duplist(*stack_a, size);
 	tab = convert_to_array(stack_tmp, size);
 	len = get_len(*stack_a, tab, size);
 	lis_tab = get_lis(tab, size);
 	l = ft_lstsiz(*stack_a) - len;
-	mid = mid_value(*stack_a);
 	while (ft_lstsiz(*stack_b) < l)
 	{
 		if ((strchr_int(lis_tab, len, (*stack_a)->data)) == 0)
 		{
 			push_b(stack_b, stack_a);
-			if ((*stack_b)->data < mid)
+			if ((*stack_b)->data < mid_value(*stack_a))
 				rotate_b(stack_b);
 		}
 		else
 			rotate_a(stack_a);
 	}
+	free(lis_tab);
 }
