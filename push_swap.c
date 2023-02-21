@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:52:58 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/21 05:32:48 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/21 07:39:24 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,15 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		stack_a = check_numberofarg(argc, argv, stack_a);
+			sleep(30);
 		if (ft_lstsiz(stack_a) < 6)
 			sort_small_num(stack_a, stack_b, ft_lstsiz(stack_a));
 		else
 		{
-			pb(&stack_a, &stack_b, ft_lstsiz(stack_a));
+			pb(&stack_a, &stack_b, ft_lstsiz(stack_a));/* 15 leaks*/
 			get_index_args(stack_a, ft_lstsiz(stack_a));
 			get_index_args(stack_b, ft_lstsiz(stack_b));
-			sleep(30);
-			push_to_a(&stack_a, &stack_b);
+			push_to_a(&stack_a, &stack_b);/* 8 leaks */
 		}
 	}
 	return (0);
