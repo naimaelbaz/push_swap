@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:11:05 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/21 04:28:08 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/22 23:24:35 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	*get_length(int *tab, int size)
 	len_tab = malloc(size * sizeof(int));
 	if (!len_tab)
 		return (NULL);
+	
 	while (i < size)
 		len_tab[i++] = 1;
 	i = 1;
@@ -50,6 +51,7 @@ int	*get_length(int *tab, int size)
 		i++;
 		j = 0;
 	}
+	free(tab);
 	return (len_tab);
 }
 
