@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 10:29:26 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/22 23:19:01 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/23 17:15:23 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	get_len(int *tab, int size)
 
 	len_tab = get_length(tab, size);
 	len = max_len(len_tab, size);
+	free(len_tab);
 	return (len);
 }
 
@@ -89,9 +90,8 @@ void	pb(t_stack **stack_a, t_stack **stack_b, int size)
 
 	stack_tmp = get_duplist(*stack_a, size);
 	tab = convert_to_array(stack_tmp, size);
-	len = get_len(tab, size);
 	lis_tab = get_lis(tab, size);
-	free (tab);
+	len = get_len(tab, size);
 	l = ft_lstsiz(*stack_a) - len;
 	while (ft_lstsiz(*stack_b) < l)
 	{
@@ -104,6 +104,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b, int size)
 		else
 			rotate_a(stack_a);
 	}
+	free(tab);
+	free_stack(&stack_tmp);
 	free(lis_tab);
-	// while(1){}
 }

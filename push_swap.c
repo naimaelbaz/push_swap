@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:52:58 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/22 23:15:35 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/23 18:55:17 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,25 +68,20 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc > 1)
 	{
-		stack_a = check_numberofarg(argc, argv, stack_a);/* 10 leaks*/
-		
-		// if (ft_lstsiz(stack_a) < 6)
-		// {
-		// 	sort_small_num(stack_a, stack_b, ft_lstsiz(stack_a));
-		// }
-		// else
-		// {
-			pb(&stack_a, &stack_b, ft_lstsiz(stack_a));/* 11 leaks*/
-			
+		stack_a = check_numberofarg(argc, argv, stack_a);
+		if (ft_lstsiz(stack_a) < 6)
+		{
+			sort_small_num(stack_a, stack_b, ft_lstsiz(stack_a));
+			// while (1);
+		}
+		else
+		{
+			pb(&stack_a, &stack_b, ft_lstsiz(stack_a));
 			get_index_args(stack_a, ft_lstsiz(stack_a));
 			get_index_args(stack_b, ft_lstsiz(stack_b));
 			push_to_a(&stack_a, &stack_b);
-			while (stack_a != NULL)
-			{
-				printf("%d\n", stack_a->data);
-				stack_a = stack_a->next;
-			}
-		// }
+		}
+		// while(1);
 	}
 	return (0);
 }
