@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:23:31 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/23 16:53:41 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/24 12:52:30 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	ft_min_pos(t_stack	*stack_b, int *tab)
 		tmp = tmp->next;
 		i++;
 	}
-	// free(tab);
 	return (min_pos);
 }
 

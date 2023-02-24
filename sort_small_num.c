@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 01:30:47 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/21 04:33:00 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/24 16:50:24 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	ft_sort3(t_stack **stack_a)
 	}
 	else if (f->data < m->data && m->data > l->data && f->data > l->data)
 		rev_rotate_a(stack_a);
+	free_stack(stack_a);
 }
 
 void	ft_sort4(t_stack **stack_a, t_stack **stack_b, int size)
@@ -51,6 +52,7 @@ void	ft_sort4(t_stack **stack_a, t_stack **stack_b, int size)
 	push_b(stack_b, stack_a);
 	ft_sort3(stack_a);
 	push_a(stack_a, stack_b);
+	free_stack(stack_a);
 }
 
 void	ft_sort5(t_stack **stack_a, t_stack **stack_b, int size)
@@ -59,13 +61,14 @@ void	ft_sort5(t_stack **stack_a, t_stack **stack_b, int size)
 	push_b(stack_b, stack_a);
 	ft_sort4(stack_a, stack_b, size);
 	push_a(stack_a, stack_b);
+	free_stack(stack_a);
 }
 
 void	sort_small_num(t_stack *stack_a, t_stack *stack_b, int size)
 {
 	if (size == 2 && !a_is_sorted(stack_a))
 		ft_sort2(&stack_a);
-	if (size == 3 && !a_is_sorted(stack_a))
+	else if (size == 3 && !a_is_sorted(stack_a))
 		ft_sort3(&stack_a);
 	else if (size == 4 && !a_is_sorted(stack_a))
 		ft_sort4(&stack_a, &stack_b, size);

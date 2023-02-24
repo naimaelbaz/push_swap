@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/23 16:35:25 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/24 16:43:32 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,6 @@ t_stack		*lst_last(t_stack *lst);
 void		push_best_move(t_stack **stack_a, t_stack **stack_b);
 int			a_is_sorted(t_stack	*stack_a);
 void		free_stack(t_stack **stack);
+int			*get_tab(int *tab, int *len_tab, int *index_tab, int size);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:54:16 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 22:59:37 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/24 14:44:39 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	rev_rotate(t_stack **stack)
 		node = node->next;
 	last_node = node->next;
 	node->next = NULL;
-	last_node->prev = NULL;
 	last_node->next = *stack;
-	(*stack)->prev = last_node;
 	*stack = last_node;
 }
 

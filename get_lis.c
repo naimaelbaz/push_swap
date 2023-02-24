@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:11:05 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/23 16:22:54 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/24 16:45:55 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ int	*get_length(int *tab, int size)
 
 int	*get_index_tab(int *tab, int size)
 {
-	int	i;
-	int	j;
 	int	*index_tab;
 	int	*len_tab;
 
@@ -67,22 +65,7 @@ int	*get_index_tab(int *tab, int size)
 	if (!index_tab)
 		return (NULL);
 	insert_tab(index_tab, len_tab, size);
-	i = 1;
-	j = 0;
-	while (i < size)
-	{
-		j = 0;
-		while (j != i)
-		{
-			if (tab[j] < tab[i] && len_tab[j] + 1 > len_tab[i])
-			{
-				index_tab[i] = j;
-				len_tab[i] = len_tab[j] + 1;
-			}
-			j++;
-		}
-		i++;
-	}
+	index_tab = get_tab(tab, len_tab, index_tab, size);
 	return (free(len_tab), index_tab);
 }
 

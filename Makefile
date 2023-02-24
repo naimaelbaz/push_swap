@@ -6,7 +6,7 @@
 #    By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 12:38:33 by nel-baz           #+#    #+#              #
-#    Updated: 2023/02/20 15:05:01 by nel-baz          ###   ########.fr        #
+#    Updated: 2023/02/24 16:46:21 by nel-baz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,8 @@ indexs.c\
 best_move.c\
 best_move_utils.c\
 mid_value.c\
-sort_small_num.c
+sort_small_num.c\
+push_swap_utils.c 
 
 OBJS = $(SRCS:.c=.o)
 
