@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 10:29:26 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/23 17:15:23 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/24 17:19:21 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ int	strchr_int(int *tab, int l, int c)
 	return (0);
 }
 
-/*check_size => check if the most elements of LIS in the top or bottom
-of stack_a 
-->if in the top do rra 
-->if in the bottom do ra*/
 int	check_size(t_stack *stack_a, int *tab_lis, int *tab, int size)
 {
 	int			i;
