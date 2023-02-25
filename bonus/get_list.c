@@ -6,11 +6,11 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:54:22 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 22:56:51 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/25 22:47:51 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 t_stack	*newlist(int data)
 {

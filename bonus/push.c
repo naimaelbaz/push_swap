@@ -6,11 +6,11 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:10:24 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 23:01:45 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/25 23:11:22 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	push(t_stack **stack1, t_stack **stack2)
 {
@@ -40,11 +40,9 @@ void	push(t_stack **stack1, t_stack **stack2)
 void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
-	ft_putstr_fd("pa\n", 1);
 }
 
 void	push_b(t_stack **stack_b, t_stack **stack_a)
 {
 	push(stack_a, stack_b);
-	ft_putstr_fd("pb\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:52:58 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/25 15:40:34 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/25 23:17:31 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		stack_a = check_numberofarg(argc, argv, stack_a);
-		while (stack_a != NULL)
-		{
-			printf("%d\n", stack_a->data);
-			stack_a = stack_a->next;
-		}
 		if (ft_lstsiz(stack_a) < 6)
 		{
 			sort_small_num(stack_a, stack_b, ft_lstsiz(stack_a));
