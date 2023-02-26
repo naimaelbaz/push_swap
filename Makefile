@@ -6,7 +6,7 @@
 #    By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 12:38:33 by nel-baz           #+#    #+#              #
-#    Updated: 2023/02/25 23:09:19 by nel-baz          ###   ########.fr        #
+#    Updated: 2023/02/26 12:22:53 by nel-baz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRCS_BONUS =	bonus/bonus_utils.c\
 				bonus/rev_rotate.c\
 				bonus/rotate.c\
 				bonus/swap.c\
-				bonus/check_args.c
+				bonus/check_args.c\
+				bonus/bonus_utils2.c
 
 OBJS = $(SRCS:.c=.o)
 

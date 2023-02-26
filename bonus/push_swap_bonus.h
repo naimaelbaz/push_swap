@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/25 23:06:24 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/26 17:49:56 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct list
 
 void		push_a(t_stack **stack_a, t_stack **stack_b);
 void		push_b(t_stack **stack_b, t_stack **stack_a);
-void		rev_rotate_a(t_stack **stack_a);
-void		rev_rotate_b(t_stack **stack_b);
+void		rev_rotate(t_stack **stack_a);
+void		rev_rotate(t_stack **stack_b);
 void		rev_rotate_ab(t_stack **stack_a, t_stack **stack_b);
 void		rotate_a(t_stack **stack_a);
 void		rotate_b(t_stack **stack_b);
@@ -56,4 +56,6 @@ int			b_is_empty(t_stack *stack_b);
 void		check_mv_2(t_stack **stack_a, t_stack **stack_b, char *mv);
 void		check_mv_3(t_stack **stack_a, t_stack **stack_b, char *mv);
 void		exit_error(t_stack *stack_a, t_stack *stack_b);
+void		check_instr(t_stack **stack_a, t_stack **stack_b);
+void		swap_ab(t_stack *stack_a, t_stack *stack_b);
 #endif

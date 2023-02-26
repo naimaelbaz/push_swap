@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:27:04 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/25 23:04:41 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/26 15:49:30 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,3 @@ void	exit_error(t_stack *stack_a, t_stack *stack_b)
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
-
-
-
