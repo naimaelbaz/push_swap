@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 12:03:27 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/26 17:54:06 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/27 15:21:07 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	check_mv_2(t_stack **stack_a, t_stack **stack_b, char *mv)
 	else if (ft_strncmp(mv, "ra\n", 2) == 0)
 		rotate_a(stack_a);
 	else if (ft_strncmp(mv, "pa\n", 2) == 0)
-		push_a(stack_a, stack_b);
+		push(stack_b, stack_a);
 	else if (ft_strncmp(mv, "sb\n", 2) == 0)
 		swap_b(*stack_b);
 	else if (ft_strncmp(mv, "rb\n", 2) == 0)
 		rotate_b(stack_b);
 	else if (ft_strncmp(mv, "pb\n", 2) == 0)
-		push_b(stack_b, stack_a);
+		push(stack_a, stack_b);
 	else if (ft_strncmp(mv, "rr\n", 2) == 0)
 		rotate_ab(stack_a, stack_b);
 	else if (ft_strncmp(mv, "ss\n", 2) == 0)
@@ -51,7 +51,6 @@ void	check_instr(t_stack **stack_a, t_stack **stack_b)
 	char	mv[3];
 	char	var;
 
-	stack_b = NULL;
 	while (read(0, mv, 3))
 	{
 		if (mv[2] == '\n')

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:10:24 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 23:01:45 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/27 13:17:32 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 
 void	push_b(t_stack **stack_b, t_stack **stack_a)
 {
+	
 	push(stack_a, stack_b);
 	ft_putstr_fd("pb\n", 1);
 }

@@ -6,7 +6,7 @@
 #    By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 12:38:33 by nel-baz           #+#    #+#              #
-#    Updated: 2023/02/26 12:22:53 by nel-baz          ###   ########.fr        #
+#    Updated: 2023/02/27 16:20:06 by nel-baz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ libft :
 	make -C libft  all	
 
 $(NAME):  $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) ./libft/libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) ./libft/libft.a -o $(NAME) -g
 
 $(NAME_B):  $(OBJS_BONUS)
 	$(CC) $(CFLAGS) $(OBJS_BONUS) ./libft/libft.a -o $(NAME_B)

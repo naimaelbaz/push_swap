@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/26 17:49:56 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/27 14:42:33 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,5 @@ void		check_mv_3(t_stack **stack_a, t_stack **stack_b, char *mv);
 void		exit_error(t_stack *stack_a, t_stack *stack_b);
 void		check_instr(t_stack **stack_a, t_stack **stack_b);
 void		swap_ab(t_stack *stack_a, t_stack *stack_b);
+void		push(t_stack **stack1, t_stack **stack2);
 #endif
