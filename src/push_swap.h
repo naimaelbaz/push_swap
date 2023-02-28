@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/25 12:27:35 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/28 10:06:52 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct list
 	int			position;
 	struct list	*next;
 }t_stack;
+
+void print_stack(t_stack *stack_a);
 
 void		push_a(t_stack **stack_a, t_stack **stack_b);
 void		push_b(t_stack **stack_b, t_stack **stack_a);
@@ -53,7 +55,7 @@ int			a_duplicate(char **argv, int argc);
 int			check_arg(char **argv, int argc);
 void		exit_fun(void);
 
-t_stack		*get_duplist(t_stack *stack_tmp, int size);
+t_stack		*get_duplist(t_stack *stack_a, int size);
 void		rev_rotate_a(t_stack **stack);
 void		rotate_a(t_stack **stack);
 t_stack		*newlist(int data);

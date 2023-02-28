@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 09:01:01 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/24 22:28:05 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/28 13:33:09 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	push_best_move(t_stack **stack_a, t_stack **stack_b)
 
 	tab = number_of_moves(*stack_a, *stack_b);
 	data = best_move(*stack_a, *stack_b);
+	// printf("\n_____best_move----> %d, ", data);
 	i = 0;
 	tmp = *stack_b;
 	len = ft_lstsiz(*stack_b);
@@ -100,6 +101,7 @@ void	push_best_move(t_stack **stack_a, t_stack **stack_b)
 	{
 		if (tmp->data == data)
 		{
+			// printf("mouvements = %d\n", tab[i]);
 			if (tab[i] * tmp->position > 0)
 				same_signe(stack_a, stack_b, tab[i], tmp->position);
 			else if (tab[i] * tmp->position <= 0)
@@ -119,9 +121,17 @@ void	push_to_a(t_stack **stack_a, t_stack **stack_b)
 	i = ft_lstsiz(*stack_b);
 	while (i > 0)
 	{
+		// printf("\n################ STACK A #################\n");
+		// print_stack(*stack_a);
+		// printf("\n################ STACK B #################\n");
+		// print_stack(*stack_b);
 		push_best_move(stack_a, stack_b);
 		get_index_args(*stack_a, ft_lstsiz(*stack_a));
 		get_index_args(*stack_b, ft_lstsiz(*stack_b));
+		// print_stack(*stack_a);
+		// printf("\t__ a __\n");
+		// print_stack(*stack_b);
+		// printf("\t__ b __\n");
 		i--;
 	}
 	get_finallist(stack_a, ft_lstsiz(*stack_a));

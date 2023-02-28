@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 09:18:37 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/23 16:54:57 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/28 13:33:33 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,23 @@ int	*get_lis(int *tab, int size)
 
 	index_tab = get_index_tab(tab, size);
 	len_tab = get_length(tab, size);
-	len = max_len(len_tab, size) - 1;
+	// for (int i = 0; i < size; i++)
+	// 	printf("len_tab[%d] = %d,  ", i, len_tab[i]);
+	// printf("\n");
+	len = max_len(len_tab, size);
+	// printf("len of seq = %d\n", len);
+	// getchar();
 	j = get_index(len_tab, size);
+	// printf("index of largest = %d\n", j);
 	lis_tab = malloc(sizeof(int) * len);
 	if (!lis_tab)
 		return (NULL);
-	while (j >= 0)
+	lis_tab[--len] = tab[j];
+	j = index_tab[j];
+	while (--len >= 0)
 	{
 		lis_tab[len] = tab[j];
 		j = index_tab[j];
-		len--;
 	}
 	free(len_tab);
 	free(index_tab);
@@ -63,3 +70,25 @@ t_stack	*get_duplist(t_stack *stack_a, int size)
 	stack_tmp = get_newlist(stack_tmp, size);
 	return (stack_tmp);
 }
+
+// void	get_array(int *array, t_stack *node, int big, int last)
+// {
+// 	while (big < last)
+// 	{
+// 		node = node->next;
+// 		array[big++] = node->data;
+// 	}
+// }
+
+// int	get_duplist(t_stack *stack_a, int size)
+// {
+// 	int		*array;
+// 	int		pos;
+// 	t_stack	*first_node;
+// 	int		end;
+
+// 	array = malloc(sizeof(int) * size);
+// 	array[0] = have_min_number(stack_a);
+// 	pos = get_position(stack_a);
+// 	get_array(array, first_node, 1, size);
+// }

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:56:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/27 14:42:33 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/28 02:36:42 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 typedef struct list
 {
-	struct list	*prev;
 	int			data;
 	int			position;
 	struct list	*next;
@@ -47,7 +46,6 @@ int			a_duplicate(char **argv, int argc);
 int			check_arg(char **argv, int argc);
 void		exit_fun(void);
 t_stack		*newlist(int data);
-int			check_size(t_stack *stack_a, int *tab_lis, int *tab, int size);
 int			ft_lstsiz(t_stack *lst);
 t_stack		*lst_last(t_stack *lst);
 int			a_is_sorted(t_stack	*stack_a);

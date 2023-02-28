@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:23:31 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/24 12:52:30 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/02/28 13:15:41 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_min_pos(t_stack	*stack_b, int *tab)
 	tmp = tmp->next;
 	while (tmp != NULL)
 	{
-		if (min_pos > ft_min_pos1(tmp->position, tab[i]))
+		if (min_pos >= ft_min_pos1(tmp->position, tab[i]))
 			min_pos = ft_min_pos1(tmp->position, tab[i]);
 		tmp = tmp->next;
 		i++;
