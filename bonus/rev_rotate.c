@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:54:16 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/26 18:11:01 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/01 19:28:16 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,3 @@ void	rev_rotate_ab(t_stack **stack_a, t_stack **stack_b)
 	rev_rotate(stack_a);
 	rev_rotate(stack_b);
 }
-
-
-
-// int	main(int argc, char **argv)
-// {
-// 	t_stack			*stack_a;
-// 	t_stack			*stack_b;
-
-// 	stack_b = NULL;
-// 	stack_a = NULL;
-// 	if (argc > 1)
-// 	{
-// 		stack_a = check_numberofarg(argc, argv, stack_a);
-// 		rev_rotate_a(stack_a)
-// 	}
-// 	return (0);
-// }

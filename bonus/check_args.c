@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:18:07 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/25 23:10:01 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/12 22:32:14 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,32 +30,11 @@ int	a_is_integer(char *str1)
 		return (0);
 	while (str1[i] != '\0')
 	{
-		if (!isdigit(str1[i]))
+		if (!ft_isdigit(str1[i]))
 			return (0);
 		i++;
 	}
 	return (1);
-}
-
-int	compar(const char *tmp, const char *tmp2)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while ((tmp[i] != '\0' || tmp2[j] != '\0'))
-	{
-		if (tmp[i] == '+')
-			i++;
-		if (tmp2[j] == '+')
-			j++;
-		if (tmp[i] != tmp2[j])
-			return (1);
-		i++;
-		j++;
-	}
-	return (0);
 }
 
 int	a_duplicate(char **str1, int size)
@@ -69,7 +48,7 @@ int	a_duplicate(char **str1, int size)
 		j = i + 1;
 		while (j < size)
 		{
-			if (!compar(str1[i], str1[j]))
+			if (ft_atoi(str1[i]) == ft_atoi(str1[j]))
 				return (0);
 			j++;
 		}

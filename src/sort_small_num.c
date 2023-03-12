@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 01:30:47 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/24 16:50:24 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/12 22:50:40 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,15 @@ void	ft_sort5(t_stack **stack_a, t_stack **stack_b, int size)
 
 void	sort_small_num(t_stack *stack_a, t_stack *stack_b, int size)
 {
-	if (size == 2 && !a_is_sorted(stack_a))
+	if (size == 2)
+	{
 		ft_sort2(&stack_a);
-	else if (size == 3 && !a_is_sorted(stack_a))
+		free_stack(&stack_a);
+	}
+	else if (size == 3)
 		ft_sort3(&stack_a);
-	else if (size == 4 && !a_is_sorted(stack_a))
+	else if (size == 4)
 		ft_sort4(&stack_a, &stack_b, size);
-	else if (size == 5 && !a_is_sorted(stack_a))
+	else if (size == 5)
 		ft_sort5(&stack_a, &stack_b, size);
 }

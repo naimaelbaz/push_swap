@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:11:05 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/28 13:34:00 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/01 17:59:12 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	*get_length(int *tab, int size)
 	{
 		while (j != i)
 		{
-			if (tab[j] < tab[i] && len_tab[j] + 1  >= len_tab[i])
+			if (tab[j] < tab[i] && len_tab[j] + 1 >= len_tab[i])
 				len_tab[i] = len_tab[j] + 1;
 			j++;
 		}
@@ -82,7 +82,6 @@ int	get_index(int *len_tab, int size)
 			max_index = i;
 		i++;
 	}
-	// getchar();
 	return (max_index);
 }
 

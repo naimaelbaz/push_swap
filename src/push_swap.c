@@ -6,20 +6,11 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 10:52:58 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/28 13:51:00 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/12 22:55:29 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void print_stack(t_stack *stack_a)
-{
-	while (stack_a)
-	{
-		printf("data---->%d  pos--->%d\n", stack_a->data, stack_a->position);
-		stack_a = stack_a->next;
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -31,16 +22,20 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		stack_a = check_numberofarg(argc, argv, stack_a);
-		if (ft_lstsiz(stack_a) < 6)
-		{
-			sort_small_num(stack_a, stack_b, ft_lstsiz(stack_a));
-		}
+		if (a_is_sorted(stack_a))
+			return (free_stack(&stack_a), 0);
 		else
 		{
-			pb(&stack_a, &stack_b, ft_lstsiz(stack_a));
-			get_index_args(stack_a, ft_lstsiz(stack_a));
-			get_index_args(stack_b, ft_lstsiz(stack_b));
-			push_to_a(&stack_a, &stack_b);
+			if (ft_lstsiz(stack_a) < 6)
+				sort_small_num(stack_a, stack_b, ft_lstsiz(stack_a));
+			else
+			{
+				pb(&stack_a, &stack_b, ft_lstsiz(stack_a));
+				get_index_args(stack_a, ft_lstsiz(stack_a));
+				get_index_args(stack_b, ft_lstsiz(stack_b));
+				push_to_a(&stack_a, &stack_b);
+				free_stack(&stack_a);
+			}
 		}
 	}
 	return (0);

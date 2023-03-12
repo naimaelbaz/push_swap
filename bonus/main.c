@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:26:22 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/28 09:09:28 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/05 22:28:07 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,17 @@ void	give_res(t_stack *stack_a, t_stack *stack_b)
 
 int	main(int argc, char **argv)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	stack_b = NULL;
 	stack_a = NULL;
 	if (argc > 1)
 	{
 		stack_a = check_numberofarg(argc, argv, stack_a);
-
 		check_instr(&stack_a, &stack_b);
 		give_res(stack_a, stack_b);
 	}
-	while(1);
+	free_stack(&stack_a);
 	return (0);
 }

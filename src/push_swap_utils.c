@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 16:38:32 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/28 12:52:02 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/01 19:25:01 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	a_is_sorted(t_stack	*stack_a)
 	}
 	return (1);
 }
-
 
 int	*convert_to_array(t_stack *stack_tmp, int size)
 {
@@ -41,20 +40,8 @@ int	*convert_to_array(t_stack *stack_tmp, int size)
 		i++;
 		tmp = tmp->next;
 	}
-	// i = 0;
-	// int	pos;
-	// pos = i;
-	// while (++i < size)
-	// {
-	// 	if (tab[i] < tab[pos])
-	// 		pos = i;
-	// }
-	// int	t = tab[0];
-	// tab[0] = tab[pos];
-	// tab[pos] = t;
 	return (tab);
 }
-
 
 void	free_stack(t_stack **stack)
 {
@@ -71,7 +58,6 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-
 int	*get_tab(int *tab, int *len_tab, int *index_tab, int size)
 {
 	int	i;
@@ -83,7 +69,7 @@ int	*get_tab(int *tab, int *len_tab, int *index_tab, int size)
 		j = 0;
 		while (j != i)
 		{
-			if (tab[j] < tab[i] && len_tab[j] + 1  >= len_tab[i])
+			if (tab[j] < tab[i] && len_tab[j] + 1 >= len_tab[i])
 			{
 				index_tab[i] = j;
 				len_tab[i] = len_tab[j] + 1;
@@ -93,4 +79,23 @@ int	*get_tab(int *tab, int *len_tab, int *index_tab, int size)
 		i++;
 	}
 	return (index_tab);
+}
+
+int	get_position(t_stack *stack_a)
+{
+	int			min;
+	int			i;
+	t_stack		*stack;
+
+	min = have_min_number(stack_a);
+	i = 0;
+	stack = stack_a;
+	while (stack != NULL)
+	{
+		if (stack->data == min)
+			break ;
+		i++;
+		stack = stack->next;
+	}
+	return (i);
 }

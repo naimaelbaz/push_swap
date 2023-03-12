@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:44:54 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/28 13:09:31 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/01 18:02:35 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int	get_largest(t_stack *stack)
 
 int	is_langest(t_stack *stack, int data)
 {
-	if (stack && stack->data == get_largest(stack))
-		return (1);
 	while (stack != NULL)
 	{
 		if (stack->data > data)

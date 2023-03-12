@@ -6,11 +6,27 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 03:40:16 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/19 22:21:03 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/01 17:53:12 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	have_min_number(t_stack *stack_a)
+{
+	int			min;
+	t_stack		*stack;
+
+	min = stack_a->data;
+	stack = stack_a->next;
+	while (stack != NULL)
+	{
+		if (stack->data < min)
+			min = stack->data;
+		stack = stack->next;
+	}
+	return (min);
+}
 
 int	have_max_number(t_stack *stack_a)
 {

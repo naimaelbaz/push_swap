@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 12:03:27 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/27 15:21:07 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/05 22:26:26 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	check_mv_2(t_stack **stack_a, t_stack **stack_b, char *mv)
 {
 	if (ft_strncmp(mv, "sa\n", 2) == 0)
-		swap_a(*stack_a);
+		swap(*stack_a);
 	else if (ft_strncmp(mv, "ra\n", 2) == 0)
-		rotate_a(stack_a);
+		rotate(stack_a);
 	else if (ft_strncmp(mv, "pa\n", 2) == 0)
 		push(stack_b, stack_a);
 	else if (ft_strncmp(mv, "sb\n", 2) == 0)
-		swap_b(*stack_b);
+		swap(*stack_b);
 	else if (ft_strncmp(mv, "rb\n", 2) == 0)
-		rotate_b(stack_b);
+		rotate(stack_b);
 	else if (ft_strncmp(mv, "pb\n", 2) == 0)
 		push(stack_a, stack_b);
 	else if (ft_strncmp(mv, "rr\n", 2) == 0)
@@ -48,21 +48,25 @@ void	check_mv_3(t_stack **stack_a, t_stack **stack_b, char *mv)
 
 void	check_instr(t_stack **stack_a, t_stack **stack_b)
 {
-	char	mv[3];
-	char	var;
+	char	*mv;
 
-	while (read(0, mv, 3))
+	mv = get_next_line(0);
+	while (mv)
 	{
+		if (mv == 0)
+			exit(1);
 		if (mv[2] == '\n')
 			check_mv_2(stack_a, stack_b, mv);
 		else if (mv[2] == 'a' || mv[2] == 'b' || mv[2] == 'r')
 		{
 			check_mv_3(stack_a, stack_b, mv);
-			read(0, &var, 1);
-			if (var != '\n')
+			if (mv[3] != '\n')
 				exit_error(*stack_a, *stack_b);
 		}
 		else
 			exit_error(*stack_a, *stack_b);
+		free(mv);
+		mv = get_next_line(0);
 	}
+	free(mv);
 }

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 10:29:44 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/25 22:48:05 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/12 22:40:29 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ t_stack	*check_getlist(int size, char **tmp, t_stack *stack_a)
 {
 	if ((!check_arg(tmp, size)))
 		exit_fun();
-	else if (size > 1)
+	else if (size >= 1)
 		stack_a = get_list(size, tmp);
-	else if (size == 1 && ft_atoi(*tmp))
-		exit(0);
 	return (stack_a);
 }
 

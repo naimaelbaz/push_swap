@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 10:29:26 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/28 13:05:22 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/01 18:39:56 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,37 @@ int	get_len(int *tab, int size)
 	return (len);
 }
 
+int	*get_lis(int *tab, int size)
+{
+	int	*lis_tab;
+	int	len;
+	int	j;
+	int	*index_tab;
+	int	*len_tab;
+
+	index_tab = get_index_tab(tab, size);
+	len_tab = get_length(tab, size);
+	len = max_len(len_tab, size);
+	j = get_index(len_tab, size);
+	lis_tab = malloc(sizeof(int) * len);
+	if (!lis_tab)
+		return (NULL);
+	lis_tab[--len] = tab[j];
+	j = index_tab[j];
+	while (--len >= 0)
+	{
+		lis_tab[len] = tab[j];
+		j = index_tab[j];
+	}
+	free(len_tab);
+	free(index_tab);
+	return (lis_tab);
+}
+
 void	pb(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int			*tab;
 	int			*lis_tab;
-	// t_stack		*stack_tmp;
 	int			len;
 
 	tab = convert_to_array(*stack_a, size);
@@ -66,9 +92,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b, int size)
 	{
 		if ((strchr_int(lis_tab, len, (*stack_a)->data)) == 0)
 		{
-			// printf("data = %d\n", (*stack_a)->data);
 			push_b(stack_b, stack_a);
-			// printf("data = %d\n", (*stack_b)->data);
 			if ((*stack_b)->data < lis_tab[len / 2])
 				rotate_b(stack_b);
 		}

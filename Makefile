@@ -6,7 +6,7 @@
 #    By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 12:38:33 by nel-baz           #+#    #+#              #
-#    Updated: 2023/02/27 16:20:06 by nel-baz          ###   ########.fr        #
+#    Updated: 2023/03/10 10:44:21 by nel-baz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 SRCS = 	src/check_args.c\
-		src/get_duplist.c\
-		src/get_duplist_utils.c\
 		src/get_lis.c\
 		src/get_list.c\
 		src/push.c\
@@ -37,7 +35,7 @@ SRCS = 	src/check_args.c\
 		src/best_move_utils.c\
 		src/mid_value.c\
 		src/sort_small_num.c\
-		src/push_swap_utils.c 
+		src/push_swap_utils.c
 
 SRCS_BONUS =	bonus/bonus_utils.c\
 				bonus/get_list.c\
@@ -48,7 +46,9 @@ SRCS_BONUS =	bonus/bonus_utils.c\
 				bonus/rotate.c\
 				bonus/swap.c\
 				bonus/check_args.c\
-				bonus/bonus_utils2.c
+				bonus/bonus_utils2.c\
+				gnl/get_next_line.c\
+				gnl/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -66,7 +66,7 @@ libft :
 	make -C libft  all	
 
 $(NAME):  $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) ./libft/libft.a -o $(NAME) -g
+	$(CC) $(CFLAGS) $(OBJS) ./libft/libft.a -o $(NAME)
 
 $(NAME_B):  $(OBJS_BONUS)
 	$(CC) $(CFLAGS) $(OBJS_BONUS) ./libft/libft.a -o $(NAME_B)

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:10:24 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/27 13:17:32 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/01 19:40:06 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	push(t_stack **stack1, t_stack **stack2)
 			(*stack1)->next = *stack2;
 		*stack2 = *stack1;
 		*stack1 = tmp;
-		(*stack1)->prev = NULL;
 	}
 	else
 	{
@@ -45,7 +44,6 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 
 void	push_b(t_stack **stack_b, t_stack **stack_a)
 {
-	
 	push(stack_a, stack_b);
 	ft_putstr_fd("pb\n", 1);
 }

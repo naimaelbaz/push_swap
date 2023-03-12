@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:54:16 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/24 14:44:39 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/01 18:19:24 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	rev_rotate(t_stack **stack)
 	t_stack	*node;
 	t_stack	*last_node;
 
+	if (!(*stack) || (*stack)->next == NULL)
+		return ;
 	node = *stack;
 	while (node && node->next->next != NULL)
 		node = node->next;
@@ -30,11 +32,6 @@ void	rev_rotate_a(t_stack **stack_a)
 {
 	rev_rotate(stack_a);
 	ft_putstr_fd("rra\n", 1);
-}
-
-void	rev_rotate_a_tmp(t_stack **stack_a)
-{
-	rev_rotate(stack_a);
 }
 
 void	rev_rotate_b(t_stack **stack_b)
