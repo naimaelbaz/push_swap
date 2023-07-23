@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:27:04 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/26 15:49:30 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/13 19:10:02 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	a_is_sorted(t_stack	*stack_a)
 {
-	while (stack_a->next != NULL)
+	while (stack_a && stack_a->next != NULL)
 	{
 		if (stack_a->data > stack_a->next->data)
 			return (0);

@@ -6,7 +6,7 @@
 #    By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 12:38:33 by nel-baz           #+#    #+#              #
-#    Updated: 2023/03/10 10:44:21 by nel-baz          ###   ########.fr        #
+#    Updated: 2023/03/15 07:41:36 by nel-baz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ SRCS = 	src/check_args.c\
 		src/indexs.c\
 		src/best_move.c\
 		src/best_move_utils.c\
-		src/mid_value.c\
 		src/sort_small_num.c\
 		src/push_swap_utils.c
 
@@ -54,11 +53,11 @@ OBJS = $(SRCS:.c=.o)
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-src/%.o: src/%.c src/push_swap.h ../libft/libft.h
-	$(CC) $(FLAGS) -c $< -o $@
+src/%.o: src/%.c src/push_swap.h libft/libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus/%.o: bonus/%.c bonus/push_swap_bonus.h ../libft/libft.h
-	$(CC) $(FLAGS) -c $< -o $@
+bonus/%.o: bonus/%.c bonus/push_swap_bonus.h libft/libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all : libft $(NAME)
 
@@ -80,7 +79,7 @@ clean:
 fclean:	clean
 	rm -rf $(NAME) $(NAME_B)
 	make -C libft/ fclean
-		
+
 re : fclean all
 
 .PHONY : all fclean clean re libft

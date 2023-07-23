@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 09:44:10 by nel-baz           #+#    #+#             */
-/*   Updated: 2023/02/18 23:02:58 by nel-baz          ###   ########.fr       */
+/*   Updated: 2023/03/14 03:12:20 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,20 @@ void	get_index_args(t_stack *stack, int size_stack)
 		pair_size(stack, size_stack);
 	else
 		impair_size(stack, size_stack);
+}
+
+int	have_min_number(t_stack *stack_a)
+{
+	int			min;
+	t_stack		*stack;
+
+	min = stack_a->data;
+	stack = stack_a->next;
+	while (stack != NULL)
+	{
+		if (stack->data < min)
+			min = stack->data;
+		stack = stack->next;
+	}
+	return (min);
 }
